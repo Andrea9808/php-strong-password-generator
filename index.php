@@ -1,4 +1,7 @@
 
+    <!-- Creare un form che invii in `GET` la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una *password casuale* (composta da lettere minuscole, lettere maiuscole, numeri e simboli) da restituire all'utente.
+    Scriviamo tutto (logica e layout) in un unico file `index.php`. -->
+    <!-- Verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file `functions.php` che includeremo poi nella pagina principale. -->
 
     <!DOCTYPE html>
     <html lang="en">
@@ -9,16 +12,14 @@
         <title>Password</title>
 
         <?php
-
+            //IMPLEMENTAZIONE PARTIALS
             require_once __DIR__ . "/partials/functions.php";
 
+            session_start();
         ?>
 
     </head>
     <body>
-
-        <!-- Creare un form che invii in `GET` la lunghezza della password. Una nostra funzione utilizzerà questo dato per generare una *password casuale* (composta da lettere minuscole, lettere maiuscole, numeri e simboli) da restituire all'utente.
-        Scriviamo tutto (logica e layout) in un unico file `index.php`. -->
 
         <div class="container">
 
@@ -48,6 +49,10 @@
                         // geneara password casuale
                         $passwordGenerata = generatorePasswordCasuale($lunghezzaPassword);
 
+                        $_SESSION["passwordGenerata"] = $passwordGenerata;
+                        header('Location: ./password.php');
+
+
                     }else {
 
                         echo "<p class='text-danger'>La lunghezza della password deve essere almeno di 8 caratteri e non più lunga di 12.</p>";
@@ -75,3 +80,59 @@
 
     </body>
     </html>
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        h3 {
+            color: #007bff;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .text-danger, .text-warning {
+            font-size: 16px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        h6 {
+            font-size: 24px;
+            font-weight: bold;
+            color: #28a745;
+            margin-top: 20px;
+        }
+    </style>
