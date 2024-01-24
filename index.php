@@ -7,6 +7,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <title>Password</title>
+
+        <?php
+
+            require_once __DIR__ . "/partials/functions.php";
+
+        ?>
+
     </head>
     <body>
 
@@ -27,22 +34,6 @@
             <!-- IMPLEMENTAZIONE PHP -->
             <?php
 
-                // funzione che genera password casuale
-                function generatorePasswordCasuale($lunghezza){
-
-                    //caratteri
-                    $caratteri = 'qwertyuiopasdfghjklzxcvbnmABCDEFGHILMOPQRSTUVZ123456789+-*';
-
-                    //mescola i caratteri
-                    $caratteriMescolati = str_shuffle($caratteri);
-
-                    //genera stringa password
-                    $passwordCasuale = substr($caratteriMescolati, 0 ,$lunghezza);
-
-                    // ritorna password
-                    return $passwordCasuale;
-                }
-
                 // $passwordGenerata = generatorePasswordCasuale();
                 // echo "$passwordGenerata";
 
@@ -52,14 +43,14 @@
                     $lunghezzaPassword = $_GET['lunghezza'];
 
                     // la lunghezza deve essere maggiore/uguale ad 8
-                    if($lunghezzaPassword >= 8){
+                    if($lunghezzaPassword >= 8 && $lunghezzaPassword <= 12){
                         
                         // geneara password casuale
                         $passwordGenerata = generatorePasswordCasuale($lunghezzaPassword);
 
                     }else {
 
-                        echo "<p class='text-danger'>La lunghezza della password deve essere almeno di 8 caratteri.</p>";
+                        echo "<p class='text-danger'>La lunghezza della password deve essere almeno di 8 caratteri e non più lunga di 12.</p>";
 
                     }
 
