@@ -58,10 +58,6 @@
                         echo "<p class='text-danger'>La lunghezza della password deve essere almeno di 8 caratteri e non più lunga di 12.</p>";
 
                     }
-
-                    echo "<h6>" . "LA TUA PASSWORD: " . $passwordGenerata . "</h6>"; 
-
-
                     // stampa la password
                     // echo "LA TUA PASSWORD:" . $passwordGenerata;
 
