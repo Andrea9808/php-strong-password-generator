@@ -78,11 +78,6 @@
     </html>
 
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: 'Arial', sans-serif;
-        }
-
         .container {
             margin-top: 50px;
             text-align: center;

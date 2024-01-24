@@ -25,27 +25,22 @@
         </div>
             
     </body>
-    
+
 </html>
 
 <style>
-        body {
-            background-color: #f8f9fa; 
-            font-family: 'Arial', sans-serif; 
-        }
+    .container {
+        margin-top: 50px;
+        text-align: center; 
+    }
 
-        .container {
-            margin-top: 50px;
-            text-align: center; 
-        }
+    h3 {
+        color: #007bff;
+    }
 
-        h3 {
-            color: #007bff;
-        }
-
-        p {
-            font-size: 20px; 
-            color: #28a745; 
-            font-weight: bold; 
-        }
+    p {
+        font-size: 20px; 
+        color: #28a745; 
+        font-weight: bold; 
+    }
     </style>
