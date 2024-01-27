@@ -11,8 +11,10 @@
         require_once __DIR__ . "/partials/functions.php";
 
         session_start();
-        $passwordGenerata = $_SESSION["passwordGenerata"];
+        $password = $_SESSION["password"];
+
     ?>
+    
 </head>
 
     <body>
@@ -20,7 +22,7 @@
         <div class="container">
             <h3>La tua password è:</h3>
             <p>
-                <?php echo "$passwordGenerata"; ?>
+                <?php echo "$password"; ?>
             </p>
         </div>
             
@@ -43,4 +45,4 @@
         color: #28a745; 
         font-weight: bold; 
     }
-    </style>
+</style> 
